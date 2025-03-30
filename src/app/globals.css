@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 8%; /* Dark background */
+    --foreground: 60 6% 98%; /* Light text */
+    --card: 0 0% 10%;
+    --card-foreground: 60 6% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 60 6% 98%;
+    --primary: 84 30% 52%; /* Green accent */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 39 74% 76%; /* Gold accent */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 84 30% 52%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 84 30% 52%;
+    --radius: 0.5rem;
+    --chart-1: 84 30% 52%;
+    --chart-2: 39 74% 76%;
+    --chart-3: 0 0% 80%;
+    --chart-4: 220 70% 50%;
+    --chart-5: 340 75% 55%;
+  }
+
+  .light {
+    --background: 60 6% 98%; /* Light background */
+    --foreground: 0 0% 8%; /* Dark text */
+    --card: 60 6% 95%;
+    --card-foreground: 0 0% 8%;
+    --popover: 60 6% 98%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 84 30% 52%; /* Green accent */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 39 74% 76%; /* Gold accent */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 60 6% 90%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 84 30% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 6% 98%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 84 30% 52%;
+    --chart-1: 84 30% 52%;
+    --chart-2: 39 74% 76%;
+    --chart-3: 0 0% 30%;
+    --chart-4: 220 70% 50%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+}
